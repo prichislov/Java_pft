@@ -28,7 +28,7 @@ public class GroupHelper extends HelperBase {
     }
 
     public void initGroupCreation() {
-        click(By.xpath("//div[@id='content']/form/input[@name='new'][1]"));
+        click(By.name("new"));
     }
 
     public void deleteSelectedGroups() {
@@ -39,5 +39,13 @@ public class GroupHelper extends HelperBase {
         if (!wd.findElement(By.name("selected[]")).isSelected()) {
             click(By.name("selected[]"));
         }
+    }
+
+    public void initModificationGroup() {
+        click(By.name("edit"));
+    }
+
+    public void submitGroupModification() {
+        click(By.name("update"));
     }
 }
