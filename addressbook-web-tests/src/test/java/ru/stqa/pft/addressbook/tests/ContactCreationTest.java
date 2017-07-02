@@ -16,7 +16,7 @@ public class ContactCreationTest extends TestBase{
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        app.getNavigationHelper().gotoCreationPage();
+        app.getNavigationHelper().gotoCreationContactPage();
         app.getContactHelper().fillContactForm(new ContactData("Tolik", "Petruchini", "097756575"));
         app.getContactHelper().submitContactForm();
     }
