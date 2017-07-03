@@ -10,11 +10,7 @@ public class GroupModificationTest extends TestBase {
 
     @Test
     public void testGroupModification(){
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
         app.getNavigationHelper().gotoGroupsPage();
         app.getGroupHelper().selectGroup();
         app.getGroupHelper().initModificationGroup();

@@ -53,4 +53,13 @@ public class ContactHelper extends HelperBase{
         Alert alert = wd.switchTo().alert();
         alert.accept();
     }
+
+    public void initModificationContact() {
+        click(By.xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img"));
+
+    }
+
+    public void updateContactForm() {
+        click(By.name("update"));
+    }
 }

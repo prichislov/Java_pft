@@ -11,11 +11,6 @@ public class ContactCreationTest extends TestBase{
     @Test
     public void testContactCreation () {
 
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         app.getNavigationHelper().gotoContactCreationPage();
         app.getContactHelper().fillContactForm(new ContactData("Tolik", "Petruchini", "097756575"));
         app.getContactHelper().submitContactForm();

@@ -9,11 +9,7 @@ public class GroupCreationTest extends TestBase {
 
     @Test
     public void testGroupCreation() {
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
         app.getNavigationHelper().gotoGroupsPage();
         app.getGroupHelper().initGroupCreation();
         app.getGroupHelper().fillGroupForm(new GroupData("groupTest", "Test2", "Test2"));
