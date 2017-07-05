@@ -10,13 +10,15 @@ public class ContactData {
     private String company;
     private String telephoneHome;
     private String telephoneWork;
+    private String group;
 
     public ContactData(){}
 
-    public ContactData(String firstName, String lastName, String telephoneHome) {
+    public ContactData(String firstName, String lastName, String telephoneHome, String group) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.telephoneHome = telephoneHome;
+        this.group = group;
     }
 
     public void setFirstName(String firstName){
@@ -57,5 +59,13 @@ public class ContactData {
 
     public void setTelephoneWork(String telephoneWork) {
         this.telephoneWork = telephoneWork;
+    }
+
+    public String getGroup() {
+        return group;
+    }
+
+    public void setGroup(String group) {
+        this.group = group;
     }
 }

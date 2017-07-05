@@ -2,9 +2,12 @@ package ru.stqa.pft.addressbook.appmenager;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
 
 /**
@@ -20,21 +23,26 @@ public class ContactHelper extends HelperBase{
         click(By.name("submit"));
     }
 
-    public void fillContactForm(ContactData data){
-        if (data.getFirstName() != null) {
-            type(By.name("firstname"), data.getFirstName());
-        }
-        if (data.getLastName() != null) {
-            type(By.name("lastname"), data.getLastName());
-        }
-        if (data.getCompany() != null) {
-            type(By.name("company"), data.getCompany());
-        }
-        if (data.getTelephoneHome() != null) {
-            type(By.name("home"), data.getTelephoneHome());
-        }
-        if (data.getTelephoneWork() != null) {
-            type(By.name("work"), data.getTelephoneWork());
+    public void fillContactForm(ContactData contactData, boolean forCreation){
+//        if (contactData.getFirstName() != null) {
+            type(By.name("firstname"), contactData.getFirstName());
+//        }
+//        if (contactData.getLastName() != null) {
+            type(By.name("lastname"), contactData.getLastName());
+//        }
+//        if (contactData.getCompany() != null) {
+            type(By.name("company"), contactData.getCompany());
+//        }
+//        if (contactData.getTelephoneHome() != null) {
+            type(By.name("home"), contactData.getTelephoneHome());
+//        }
+//        if (contactData.getTelephoneWork() != null) {
+            type(By.name("work"), contactData.getTelephoneWork());
+//        }
+        if(forCreation){
+            new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
+        }else {
+            Assert.assertFalse(isElementPresent(By.name("new_group")));
         }
     }
 
