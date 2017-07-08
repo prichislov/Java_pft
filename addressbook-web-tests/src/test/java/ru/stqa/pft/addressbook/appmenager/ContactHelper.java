@@ -39,9 +39,9 @@ public class ContactHelper extends HelperBase{
 //        if (contactData.getTelephoneWork() != null) {
             type(By.name("work"), contactData.getTelephoneWork());
 //        }
-        if(forCreation){
+        if (forCreation) {
             new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
-        }else {
+        } else {
             Assert.assertFalse(isElementPresent(By.name("new_group")));
         }
     }
